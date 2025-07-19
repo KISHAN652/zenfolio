@@ -15,7 +15,7 @@ export function EducationSection() {
         </h2>
         <div className="flex justify-center pt-8">
           <div className="gradient-border-card rounded-lg w-full max-w-lg">
-             <Card className="mt-0 w-full transform rounded-lg border-none bg-transparent shadow-none transition-all duration-300 backdrop-blur-none">
+             <Card className="mt-0 w-full transform rounded-lg border-none bg-transparent shadow-none transition-all duration-300 hover:scale-[1.02] backdrop-blur-none">
               <CardHeader className="flex flex-row items-center gap-4">
                 <School className="h-10 w-10 text-primary" />
                 <div className="grid gap-1">
