@@ -71,7 +71,7 @@ export function PortfolioSidebar() {
         <SidebarMenu>
           {navLinks.map((link) => (
             <SidebarMenuItem key={link.href}>
-              <Link href={link.href} passHref legacyBehavior>
+              <Link href={link.href}>
                 <SidebarMenuButton
                   isActive={activeSection === link.href.substring(1)}
                   tooltip={link.label}
