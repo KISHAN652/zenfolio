@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Download, MoveRight } from "lucide-react";
 import Link from "next/link";
+import { SidebarTrigger } from "./ui/sidebar";
 
 export function HeroSection() {
   return (
@@ -8,6 +9,9 @@ export function HeroSection() {
       id="home"
       className="relative w-full bg-background py-24 md:py-32 lg:py-40"
     >
+      <div className="absolute top-6 left-6">
+        <SidebarTrigger className="md:hidden" />
+      </div>
       <div className="container mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <div className="flex flex-col items-center space-y-8">
           <div className="space-y-4">
