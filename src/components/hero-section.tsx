@@ -12,10 +12,10 @@ export function HeroSection() {
         <div className="flex flex-col items-center space-y-6">
           <div className="space-y-2">
             <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              John Doe
+              Kishan Sondager
             </h1>
             <p className="mx-auto max-w-[700px] text-lg text-muted-foreground md:text-xl">
-              A Passionate Full-Stack Developer Crafting Modern Web Experiences.
+              A Passionate Frontend Developer Crafting Modern Web Experiences.
             </p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
