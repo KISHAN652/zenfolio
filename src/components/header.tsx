@@ -68,7 +68,7 @@ export function Header() {
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#home" className="flex items-center gap-2">
           <Code className="h-7 w-7 text-primary" />
-          <span className="font-headline text-xl font-bold">Zenfolio</span>
+          <span className="font-headline text-xl font-bold">Kishan Sondager</span>
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-8">
           {navItems}
@@ -91,7 +91,7 @@ export function Header() {
                   >
                     <Code className="h-6 w-6 text-primary" />
                     <span className="font-headline text-lg font-bold">
-                      Zenfolio
+                      Kishan Sondager
                     </span>
                   </Link>
                   <Button

@@ -14,7 +14,21 @@ const skills = [
   { name: "HTML5", icon: <CodeXml className="h-12 w-12 text-primary" /> },
   { name: "CSS3", icon: <Paintbrush className="h-12 w-12 text-primary" /> },
   { name: "JavaScript", icon: <Code className="h-12 w-12 text-primary" /> },
-  { name: "Python", icon: <Code className="h-12 w-12 text-primary" /> },
+  {
+    name: "Python",
+    icon: (
+      <svg
+        className="h-12 w-12 text-primary"
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+      >
+        <title>Python</title>
+        <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zM9.336 6.342c.823 0 1.5.677 1.5 1.5s-.677 1.5-1.5 1.5-1.5-.677-1.5-1.5.677-1.5 1.5-1.5zm6.336 11.316c.823 0 1.5.677 1.5 1.5s-.677 1.5-1.5 1.5-1.5-.677-1.5-1.5.677-1.5 1.5-1.5zm-6.07-5.118c2.253.007 4.773 1.48 4.773 4.25v2.25h-3V16.5c0-1.12-.473-2.25-1.773-2.25v-1.5zm5.533-5.543c-2.253-.007-4.773-1.48-4.773-4.25V3h3v2.25c0 1.12.473 2.25 1.773 2.25v1.5z" />
+      </svg>
+    ),
+  },
 ];
 
 export function SkillsSection() {
