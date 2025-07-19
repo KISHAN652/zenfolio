@@ -21,20 +21,20 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       let currentSection = "";
-      navLinks.forEach((link) => {
-        const section = document.getElementById(link.href.substring(1));
-        if (section) {
-          const sectionTop = section.offsetTop;
-          if (window.scrollY >= sectionTop - 150) {
-            currentSection = link.href.substring(1);
-          }
+      // Adjust the query selector to be more specific to the main content area
+      const sections = document.querySelectorAll("main section[id]");
+      sections.forEach((section) => {
+        const sectionEl = section as HTMLElement;
+        const sectionTop = sectionEl.offsetTop;
+        if (window.scrollY >= sectionTop - 150) {
+          currentSection = sectionEl.id;
         }
       });
       setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); 
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -60,15 +60,6 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-           <Button asChild variant="outline" className="bg-transparent hover:bg-primary hover:text-primary-foreground">
-            <a href="/placeholder-resume.pdf" download>
-              <Download className="mr-2 h-4 w-4" />
-              Resume
-            </a>
-          </Button>
-        </div>
-
         <div className="md:hidden">
           <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="ghost" size="icon">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -92,12 +83,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="mt-4" variant="outline">
-              <a href="/placeholder-resume.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </a>
-            </Button>
           </nav>
         </div>
       )}
