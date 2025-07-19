@@ -8,11 +8,11 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="relative antialiased">
+    <div className="relative flex min-h-screen flex-col bg-background antialiased">
       <Header />
       <main
         id="content"
-        className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-24"
+        className="container mx-auto max-w-5xl flex-grow px-4 sm:px-6 lg:px-8 pt-24"
       >
         <AboutSection />
         <SkillsSection />

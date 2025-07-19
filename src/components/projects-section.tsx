@@ -43,6 +43,16 @@ const projects = [
     github: "#",
     demo: "#",
   },
+   {
+    title: "Project Four",
+    description:
+      "A mobile application designed to streamline daily tasks and improve productivity.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "productivity app",
+    tags: ["React Native", "Firebase", "Redux"],
+    github: "#",
+    demo: "#",
+  },
 ];
 
 export function ProjectsSection() {
@@ -52,27 +62,29 @@ export function ProjectsSection() {
         <h2 className="font-headline text-3xl font-bold uppercase tracking-wider text-primary">
           Projects
         </h2>
-        <div className="grid gap-8 pt-4 sm:grid-cols-1">
+        <div className="grid grid-cols-1 gap-8 pt-4 md:grid-cols-2">
           {projects.map((project) => (
             <Card
               key={project.title}
-              className="group flex transform flex-col overflow-hidden rounded-lg border-2 border-transparent bg-secondary shadow-sm transition-all duration-300 hover:border-primary hover:shadow-lg lg:flex-row"
+              className="group flex transform flex-col overflow-hidden rounded-lg bg-secondary shadow-sm transition-all duration-300 hover:shadow-lg"
             >
-              <div className="relative lg:w-1/3">
-                 <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={project.imageHint}
-                  />
+              <div className="overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                  data-ai-hint={project.imageHint}
+                />
               </div>
-              <div className="flex flex-1 flex-col">
-                <CardContent className="flex-grow p-6">
+              <div className="flex flex-1 flex-col p-6">
+                <CardHeader className="p-0">
                   <CardTitle className="mb-2 font-headline text-xl">
                     {project.title}
                   </CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow p-0">
                   <CardDescription className="mb-4">
                     {project.description}
                   </CardDescription>
@@ -88,7 +100,7 @@ export function ProjectsSection() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="flex justify-end gap-4 p-6 pt-0">
+                <CardFooter className="mt-4 flex justify-end gap-4 p-0">
                   <Button variant="outline" size="sm" asChild>
                     <Link
                       href={project.github}
