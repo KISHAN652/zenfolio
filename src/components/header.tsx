@@ -46,28 +46,31 @@ export function Header() {
       key={link.href}
       href={link.href}
       onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
-      className={`text-sm font-medium transition-colors hover:text-primary ${
+      className={`relative text-sm font-medium transition-colors hover:text-primary ${
         activeSection === link.href.substring(1)
           ? "text-primary"
           : "text-muted-foreground"
       }`}
     >
       {link.label}
+      {activeSection === link.href.substring(1) && (
+        <span className="absolute -bottom-1 left-1/2 h-0.5 w-4 -translate-x-1/2 rounded-full bg-primary"></span>
+      )}
     </Link>
   ));
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b backdrop-blur-md transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full border-b backdrop-blur-lg transition-all duration-300 ${
         isScrolled ? "border-border bg-background/80" : "border-transparent"
       }`}
     >
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#home" className="flex items-center gap-2">
-          <Code className="h-6 w-6 text-primary" />
-          <span className="text-lg font-bold">Zenfolio</span>
+          <Code className="h-7 w-7 text-primary" />
+          <span className="font-headline text-xl font-bold">Zenfolio</span>
         </Link>
-        <nav className="hidden md:flex md:items-center md:gap-6">
+        <nav className="hidden md:flex md:items-center md:gap-8">
           {navItems}
         </nav>
         <div className="md:hidden">
@@ -87,7 +90,9 @@ export function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Code className="h-6 w-6 text-primary" />
-                    <span className="text-lg font-bold">Zenfolio</span>
+                    <span className="font-headline text-lg font-bold">
+                      Zenfolio
+                    </span>
                   </Link>
                   <Button
                     variant="ghost"

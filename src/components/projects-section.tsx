@@ -47,14 +47,16 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full bg-secondary py-16 md:py-24">
+    <section id="projects" className="w-full bg-secondary py-20 md:py-28">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col items-center space-y-4 text-center">
-          <Badge variant="outline">Projects</Badge>
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
+        <div className="mb-16 flex flex-col items-center space-y-4 text-center">
+          <Badge variant="outline" className="text-sm">
+            Projects
+          </Badge>
+          <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
             My Creative Works
           </h2>
-          <p className="max-w-[700px] text-muted-foreground">
+          <p className="max-w-[700px] text-lg text-muted-foreground">
             Here are a few projects I've worked on recently.
           </p>
         </div>
@@ -62,7 +64,7 @@ export function ProjectsSection() {
           {projects.map((project) => (
             <Card
               key={project.title}
-              className="flex flex-col overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group flex transform flex-col overflow-hidden rounded-2xl border-transparent bg-background shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
               <CardHeader className="p-0">
                 <Image
@@ -70,15 +72,21 @@ export function ProjectsSection() {
                   alt={project.title}
                   width={600}
                   height={400}
-                  className="h-48 w-full object-cover"
+                  className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint={project.imageHint}
                 />
               </CardHeader>
               <CardContent className="flex-grow p-6">
-                <CardTitle className="mb-2">{project.title}</CardTitle>
+                <CardTitle className="mb-2 font-headline text-2xl">
+                  {project.title}
+                </CardTitle>
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="bg-primary/10 text-primary"
+                    >
                       {tag}
                     </Badge>
                   ))}

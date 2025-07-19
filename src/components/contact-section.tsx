@@ -59,27 +59,31 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="w-full bg-secondary py-16 md:py-24">
+    <section id="contact" className="w-full bg-secondary py-20 md:py-28">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col items-center space-y-4 text-center">
-          <Badge variant="outline">Contact</Badge>
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
+        <div className="mb-16 flex flex-col items-center space-y-4 text-center">
+          <Badge variant="outline" className="text-sm">
+            Contact
+          </Badge>
+          <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
             Get In Touch
           </h2>
-          <p className="max-w-[700px] text-muted-foreground">
+          <p className="max-w-[700px] text-lg text-muted-foreground">
             Have a question or want to work together? Leave a message.
           </p>
         </div>
         <div className="flex justify-center">
-          <Card className="w-full max-w-2xl shadow-md">
+          <Card className="w-full max-w-2xl rounded-2xl border-transparent bg-background shadow-lg">
             <CardHeader>
-              <CardTitle>Send me a message</CardTitle>
+              <CardTitle className="font-headline text-2xl">
+                Send me a message
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
-                  className="space-y-8"
+                  className="space-y-6"
                 >
                   <FormField
                     control={form.control}
@@ -119,7 +123,7 @@ export function ContactSection() {
                         <FormControl>
                           <Textarea
                             placeholder="Tell me what's on your mind..."
-                            className="min-h-[120px]"
+                            className="min-h-[150px]"
                             {...field}
                           />
                         </FormControl>
@@ -127,8 +131,8 @@ export function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit">
-                    <Send className="mr-2 h-4 w-4" />
+                  <Button type="submit" size="lg" className="w-full">
+                    <Send className="mr-2 h-5 w-5" />
                     Send Message
                   </Button>
                 </form>
