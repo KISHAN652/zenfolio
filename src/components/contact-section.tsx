@@ -66,74 +66,76 @@ export function ContactSection() {
         </p>
 
         <div className="mx-auto max-w-lg pt-8">
-          <Card className="mt-4 rounded-lg border-2 border-border/30 bg-secondary/20 text-left shadow-sm backdrop-blur-lg">
-            <CardContent className="p-6">
-              <Form {...form}>
-                <form
-                  onSubmit={form.handleSubmit(onSubmit)}
-                  className="space-y-6"
-                >
-                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="gradient-border-card rounded-lg">
+            <Card className="mt-0 rounded-lg border-none bg-transparent text-left shadow-none backdrop-blur-none">
+              <CardContent className="p-6">
+                <Form {...form}>
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-6"
+                  >
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Name</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Your Name" {...field} className="bg-background/50" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="your.email@example.com"
+                                {...field}
+                                className="bg-background/50"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
                     <FormField
                       control={form.control}
-                      name="name"
+                      name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name</FormLabel>
+                          <FormLabel>Message</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Name" {...field} className="bg-transparent" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="your.email@example.com"
+                            <Textarea
+                              placeholder="Tell me what's on your mind..."
+                              className="min-h-[150px] bg-background/50"
                               {...field}
-                              className="bg-transparent"
                             />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                  </div>
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell me what's on your mind..."
-                            className="min-h-[150px] bg-transparent"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90"
-                  >
-                    <Send className="mr-2 h-5 w-5" />
-                    Send Message
-                  </Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-transform duration-300 hover:scale-105"
+                    >
+                      <Send className="mr-2 h-5 w-5" />
+                      Send Message
+                    </Button>
+                  </form>
+                </Form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>

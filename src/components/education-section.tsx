@@ -14,29 +14,31 @@ export function EducationSection() {
           Education
         </h2>
         <div className="flex justify-center pt-8">
-          <Card className="mt-4 w-full max-w-lg transform rounded-lg border-2 border-border/30 bg-secondary/20 shadow-sm transition-all duration-300 hover:border-primary hover:shadow-lg backdrop-blur-lg">
-            <CardHeader className="flex flex-row items-center gap-4">
-              <School className="h-10 w-10 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle className="font-headline text-2xl">
-                  Bachelor of Computer Applications (BCA)
-                </CardTitle>
-                <p className="text-muted-foreground">
-                  Marwadi University, Rajkot
-                </p>
-              </div>
-            </CardHeader>
-            <CardContent className="grid gap-2 pl-16 pt-0">
-              <div className="flex items-center text-sm text-muted-foreground">
-                <Calendar className="mr-2 h-4 w-4" />
-                <span>Graduated: May 2025</span>
-              </div>
-              <div className="flex items-center text-sm text-muted-foreground">
-                <Star className="mr-2 h-4 w-4" />
-                <span>CGPA: 7.04 / 10.0</span>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="gradient-border-card rounded-lg w-full max-w-lg">
+             <Card className="mt-0 w-full transform rounded-lg border-none bg-transparent shadow-none transition-all duration-300 backdrop-blur-none">
+              <CardHeader className="flex flex-row items-center gap-4">
+                <School className="h-10 w-10 text-primary" />
+                <div className="grid gap-1">
+                  <CardTitle className="font-headline text-2xl">
+                    Bachelor of Computer Applications (BCA)
+                  </CardTitle>
+                  <p className="text-muted-foreground">
+                    Marwadi University, Rajkot
+                  </p>
+                </div>
+              </CardHeader>
+              <CardContent className="grid gap-2 pl-16 pt-0">
+                <div className="flex items-center text-sm text-muted-foreground">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  <span>Graduated: May 2025</span>
+                </div>
+                <div className="flex items-center text-sm text-muted-foreground">
+                  <Star className="mr-2 h-4 w-4" />
+                  <span>CGPA: 7.04 / 10.0</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
