@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
@@ -21,7 +21,6 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       let currentSection = "";
-      // Adjust the query selector to be more specific to the main content area
       const sections = document.querySelectorAll("main section[id]");
       sections.forEach((section) => {
         const sectionEl = section as HTMLElement;
@@ -37,6 +36,17 @@ export function Header() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/50 backdrop-blur-lg border-b border-border/30">
@@ -61,22 +71,23 @@ export function Header() {
         </nav>
 
         <div className="md:hidden">
-          <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="ghost" size="icon">
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="ghost" size="icon" aria-label="Toggle Menu">
+            <Menu className={cn("h-6 w-6 transition-transform duration-300", isMenuOpen ? "rotate-90 scale-0" : "rotate-0 scale-100")} />
+             <X className={cn("h-6 w-6 absolute transition-transform duration-300", isMenuOpen ? "rotate-0 scale-100" : "-rotate-90 scale-0")} />
           </Button>
         </div>
       </div>
       
       {isMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm">
-          <nav className="flex flex-col items-center gap-6 py-8">
+        <div className="fixed inset-0 top-20 z-40 bg-background/80 backdrop-blur-lg md:hidden">
+          <nav className="flex h-full flex-col items-center justify-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "text-xl font-medium text-muted-foreground transition-colors hover:text-primary",
+                  "text-3xl font-medium text-muted-foreground transition-colors hover:text-primary",
                   activeSection === link.href.substring(1) && "text-primary"
                 )}
               >
