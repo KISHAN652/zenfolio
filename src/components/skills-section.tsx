@@ -15,10 +15,6 @@ const skills = [
   { name: "CSS3", icon: <Paintbrush className="h-12 w-12 text-primary" /> },
   { name: "JavaScript", icon: <Code className="h-12 w-12 text-primary" /> },
   { name: "Python", icon: <Code className="h-12 w-12 text-primary" /> },
-  { name: "React", icon: <Code className="h-12 w-12 text-primary" /> },
-  { name: "Next.js", icon: <Code className="h-12 w-12 text-primary" /> },
-  { name: "Git", icon: <GitMerge className="h-12 w-12 text-primary" /> },
-  { name: "Tailwind CSS", icon: <Wind className="h-12 w-12 text-primary" /> },
 ];
 
 export function SkillsSection() {
@@ -37,7 +33,7 @@ export function SkillsSection() {
             front-end to back-end.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4">
           {skills.map((skill) => (
             <Card
               key={skill.name}
