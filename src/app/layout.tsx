@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} font-body antialiased`}
+        className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} font-body bg-background text-foreground`}
       >
         {children}
         <Toaster />

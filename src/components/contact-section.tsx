@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
 import {
@@ -59,61 +58,54 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="w-full bg-secondary py-20 md:py-28">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 flex flex-col items-center space-y-4 text-center">
-          <Badge variant="outline" className="text-sm">
-            Contact
-          </Badge>
-          <h2 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+    <section id="contact" className="scroll-mt-16 py-20 lg:py-24">
+      <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="space-y-4">
+          <h2 className="font-headline text-3xl font-bold uppercase tracking-wider text-primary">
             Get In Touch
           </h2>
-          <p className="max-w-[700px] text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             Have a question or want to work together? Leave a message.
           </p>
-        </div>
-        <div className="flex justify-center">
-          <Card className="w-full max-w-2xl rounded-2xl border-transparent bg-background shadow-lg">
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl">
-                Send me a message
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+
+          <Card className="mt-4 rounded-lg border-2 border-transparent bg-secondary shadow-sm">
+            <CardContent className="p-6">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
                   className="space-y-6"
                 >
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your Name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="your.email@example.com"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your Name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="your.email@example.com"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                   <FormField
                     control={form.control}
                     name="message"
@@ -131,7 +123,11 @@ export function ContactSection() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full sm:w-auto"
+                  >
                     <Send className="mr-2 h-5 w-5" />
                     Send Message
                   </Button>
