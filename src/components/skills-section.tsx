@@ -28,27 +28,25 @@ const skills = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="scroll-mt-16 py-20 lg:py-24">
-      <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-4">
-          <h2 className="font-headline text-3xl font-bold uppercase tracking-wider text-primary">
-            Skills
-          </h2>
-          <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4 md:gap-6">
-            {skills.map((skill) => (
-              <Card
-                key={skill.name}
-                className="group flex transform flex-col items-center justify-center rounded-lg border-2 border-transparent bg-secondary p-4 text-center transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-lg"
-              >
-                <CardContent className="flex flex-col items-center justify-center gap-3 p-0 text-primary transition-colors duration-300 group-hover:text-primary">
-                  {skill.icon}
-                  <p className="text-md font-semibold text-foreground">
-                    {skill.name}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+    <section id="skills" className="scroll-mt-24 py-20 lg:py-24">
+      <div className="space-y-4">
+        <h2 className="font-headline text-3xl font-bold uppercase tracking-wider text-primary">
+          Skills
+        </h2>
+        <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4 md:gap-6">
+          {skills.map((skill) => (
+            <Card
+              key={skill.name}
+              className="group flex transform flex-col items-center justify-center rounded-lg border-2 border-transparent bg-secondary p-4 text-center transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-lg"
+            >
+              <CardContent className="flex flex-col items-center justify-center gap-3 p-0 text-primary transition-colors duration-300 group-hover:text-primary">
+                {skill.icon}
+                <p className="text-md font-semibold text-foreground">
+                  {skill.name}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

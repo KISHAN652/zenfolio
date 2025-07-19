@@ -47,20 +47,19 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="scroll-mt-16 py-20 lg:py-24">
-      <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-4">
-          <h2 className="font-headline text-3xl font-bold uppercase tracking-wider text-primary">
-            Projects
-          </h2>
-          <div className="grid gap-8 pt-4 sm:grid-cols-1">
-            {projects.map((project) => (
-              <Card
-                key={project.title}
-                className="group flex transform flex-col overflow-hidden rounded-lg border-2 border-transparent bg-secondary shadow-sm transition-all duration-300 hover:border-primary hover:shadow-lg lg:flex-row"
-              >
-                <CardHeader className="p-0 lg:w-1/3">
-                  <Image
+    <section id="projects" className="scroll-mt-24 py-20 lg:py-24">
+      <div className="space-y-4">
+        <h2 className="font-headline text-3xl font-bold uppercase tracking-wider text-primary">
+          Projects
+        </h2>
+        <div className="grid gap-8 pt-4 sm:grid-cols-1">
+          {projects.map((project) => (
+            <Card
+              key={project.title}
+              className="group flex transform flex-col overflow-hidden rounded-lg border-2 border-transparent bg-secondary shadow-sm transition-all duration-300 hover:border-primary hover:shadow-lg lg:flex-row"
+            >
+              <div className="relative lg:w-1/3">
+                 <Image
                     src={project.image}
                     alt={project.title}
                     width={600}
@@ -68,51 +67,50 @@ export function ProjectsSection() {
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     data-ai-hint={project.imageHint}
                   />
-                </CardHeader>
-                <div className="flex flex-1 flex-col">
-                  <CardContent className="flex-grow p-6">
-                    <CardTitle className="mb-2 font-headline text-xl">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="mb-4">
-                      {project.description}
-                    </CardDescription>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <Badge
-                          key={tag}
-                          variant="secondary"
-                          className="bg-primary/10 text-primary"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex justify-end gap-4 p-6 pt-0">
-                    <Button variant="outline" size="sm" asChild>
-                      <Link
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
+              </div>
+              <div className="flex flex-1 flex-col">
+                <CardContent className="flex-grow p-6">
+                  <CardTitle className="mb-2 font-headline text-xl">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="mb-4">
+                    {project.description}
+                  </CardDescription>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="secondary"
+                        className="bg-primary/10 text-primary"
                       >
-                        <Github className="mr-2 h-4 w-4" /> GitHub
-                      </Link>
-                    </Button>
-                    <Button size="sm" asChild>
-                      <Link
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </div>
-              </Card>
-            ))}
-          </div>
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-end gap-4 p-6 pt-0">
+                  <Button variant="outline" size="sm" asChild>
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="mr-2 h-4 w-4" /> GitHub
+                    </Link>
+                  </Button>
+                  <Button size="sm" asChild>
+                    <Link
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
