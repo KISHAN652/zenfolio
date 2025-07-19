@@ -17,11 +17,9 @@ const navLinks = [
 export function Header() {
   const [activeSection, setActiveSection] = useState("about");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Logic for active section
       let currentSection = "";
       navLinks.forEach((link) => {
         const section = document.getElementById(link.href.substring(1));
@@ -33,13 +31,6 @@ export function Header() {
         }
       });
       setActiveSection(currentSection);
-
-      // Logic for scrolled state
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -48,7 +39,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-background/80 backdrop-blur-sm shadow-md" : "bg-transparent")}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/50 backdrop-blur-lg border-b border-border/30">
       <div className="container mx-auto flex h-20 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="#" className="font-headline text-2xl font-bold text-primary">
           KS
@@ -70,7 +61,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-           <Button asChild variant="outline">
+           <Button asChild variant="outline" className="bg-transparent hover:bg-primary hover:text-primary-foreground">
             <a href="/placeholder-resume.pdf" download>
               <Download className="mr-2 h-4 w-4" />
               Resume
@@ -86,7 +77,7 @@ export function Header() {
       </div>
       
       {isMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm shadow-lg">
+        <div className="md:hidden bg-background/95 backdrop-blur-sm">
           <nav className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <Link

@@ -66,7 +66,7 @@ export function ContactSection() {
         </p>
 
         <div className="mx-auto max-w-lg pt-8">
-          <Card className="mt-4 rounded-lg border-2 border-secondary bg-secondary text-left shadow-sm">
+          <Card className="mt-4 rounded-lg border-2 border-border/30 bg-secondary/20 text-left shadow-sm backdrop-blur-lg">
             <CardContent className="p-6">
               <Form {...form}>
                 <form
@@ -81,7 +81,7 @@ export function ContactSection() {
                         <FormItem>
                           <FormLabel>Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Name" {...field} />
+                            <Input placeholder="Your Name" {...field} className="bg-transparent" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -97,6 +97,7 @@ export function ContactSection() {
                             <Input
                               placeholder="your.email@example.com"
                               {...field}
+                              className="bg-transparent"
                             />
                           </FormControl>
                           <FormMessage />
@@ -113,7 +114,7 @@ export function ContactSection() {
                         <FormControl>
                           <Textarea
                             placeholder="Tell me what's on your mind..."
-                            className="min-h-[150px]"
+                            className="min-h-[150px] bg-transparent"
                             {...field}
                           />
                         </FormControl>

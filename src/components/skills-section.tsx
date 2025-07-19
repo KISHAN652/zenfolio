@@ -61,7 +61,7 @@ export function SkillsSection() {
           {skills.map((skill) => (
             <Card
               key={skill.name}
-              className="group flex transform flex-col items-center justify-center rounded-lg border-2 border-secondary bg-secondary p-4 text-center transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-lg"
+              className="group flex transform flex-col items-center justify-center rounded-lg border-2 border-border/30 bg-secondary/20 p-4 text-center transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-lg backdrop-blur-lg"
             >
               <CardContent className="flex flex-col items-center justify-center gap-3 p-0 text-primary transition-colors duration-300 group-hover:text-primary">
                 {skill.icon}
