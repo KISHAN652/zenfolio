@@ -123,14 +123,16 @@ export function ContactSection() {
                         </FormItem>
                       )}
                     />
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-transform duration-300 hover:scale-105"
-                    >
-                      <Send className="mr-2 h-5 w-5" />
-                      Send Message
-                    </Button>
+                    <div className="flex justify-center">
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-transform duration-300 hover:scale-105"
+                      >
+                        <Send className="mr-2 h-5 w-5" />
+                        Send Message
+                      </Button>
+                    </div>
                   </form>
                 </Form>
               </CardContent>
