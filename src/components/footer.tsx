@@ -1,8 +1,15 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="w-full border-t bg-background">
