@@ -58,17 +58,17 @@ export function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-24 py-20 lg:py-24">
       <div className="space-y-4 text-center">
-        <h2 className="font-headline text-4xl font-bold uppercase tracking-wider text-primary">
+        <h2 className="font-headline text-3xl font-bold uppercase tracking-wider text-primary sm:text-4xl">
           Get In Touch
         </h2>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-base text-muted-foreground sm:text-lg">
           Have a question or want to work together? Leave a message.
         </p>
 
         <div className="mx-auto max-w-lg pt-8">
           <div className="gradient-border-card rounded-lg">
             <Card className="mt-0 rounded-lg border-none bg-transparent text-left shadow-none backdrop-blur-none">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}

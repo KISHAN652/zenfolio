@@ -59,7 +59,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-24 py-20 lg:py-24">
       <div className="space-y-4">
-        <h2 className="text-center font-headline text-4xl font-bold uppercase tracking-wider text-primary">
+        <h2 className="text-center font-headline text-3xl font-bold uppercase tracking-wider text-primary sm:text-4xl">
           Projects
         </h2>
         <div className="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
@@ -79,9 +79,9 @@ export function ProjectsSection() {
                     data-ai-hint={project.imageHint}
                   />
                 </div>
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
                   <CardHeader className="p-0">
-                    <CardTitle className="mb-2 font-headline text-2xl">
+                    <CardTitle className="mb-2 font-headline text-xl sm:text-2xl">
                       {project.title}
                     </CardTitle>
                   </CardHeader>
@@ -101,7 +101,7 @@ export function ProjectsSection() {
                       ))}
                     </div>
                   </CardContent>
-                  <CardFooter className="mt-6 flex justify-end gap-4 p-0">
+                  <CardFooter className="mt-6 flex justify-end gap-2 sm:gap-4 p-0">
                     <Button variant="outline" size="sm" asChild>
                       <Link
                         href={project.github}

@@ -54,7 +54,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className="scroll-mt-24 py-20 lg:py-24">
       <div className="space-y-4">
-        <h2 className="text-center font-headline text-4xl font-bold uppercase tracking-wider text-primary">
+        <h2 className="text-center font-headline text-3xl font-bold uppercase tracking-wider text-primary sm:text-4xl">
           Skills
         </h2>
         <div className="grid grid-cols-2 gap-4 pt-8 sm:grid-cols-4 md:gap-6">
@@ -65,7 +65,7 @@ export function SkillsSection() {
             >
               <CardContent className="flex flex-col items-center justify-center gap-3 p-0 text-primary transition-colors duration-300 group-hover:text-primary">
                 {skill.icon}
-                <p className="text-lg font-semibold text-foreground">
+                <p className="mt-2 text-base font-semibold text-foreground sm:text-lg">
                   {skill.name}
                 </p>
               </CardContent>
