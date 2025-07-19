@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { SidebarProvider } from "@/components/ui/sidebar";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -29,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} font-body antialiased`}
       >
-        <SidebarProvider>{children}</SidebarProvider>
+        {children}
         <Toaster />
       </body>
     </html>
